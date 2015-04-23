@@ -2,14 +2,15 @@ require('pry')
 
 class String
   define_method(:anagram) do |words|
-    word = self.split(//).sort!()
+    word = self
+    sorted_word = self.split(//).sort!()
     words = words.split(/, /).sort!()
-    anagrams = false
+    anagrams = []
 
     words.each() do |item|
-      item = item.split(//).sort!()
-      if(word.length().==(item.length()) && (word.eql?(item)))
-        anagrams = true
+      sorted_item = item.split(//).sort!()
+      if(sorted_word.length().==(sorted_item.length()) && (sorted_word.eql?(sorted_item)))
+        anagrams.push(item)
       end
     end
     anagrams

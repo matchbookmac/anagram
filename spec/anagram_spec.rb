@@ -11,4 +11,7 @@ describe('String#anagram') do
   it("will tell the user if there are any anagrams for the word in the array") do
     expect("dog".anagram("god, ogd, odg")).to(eq(true))
   end
+  it("will tell the user which words are anagrams for the word provided") do
+    expect("dog".anagram("god, ogd, odg")).to(eq("god"))
+  end
 end
