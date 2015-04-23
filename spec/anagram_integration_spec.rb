@@ -11,4 +11,11 @@ describe('The anagram path', {:type => :feature}) do
     click_button('go!')
     expect(page).to have_content('dog, odg')
   end
+  it('processes the user\'s input word and possible anagrams and return a list of anagrams') do
+    visit('/')
+    fill_in('word', :with => 'cat')
+    fill_in('words', :with => 'act')
+    click_button('go!')
+    expect(page).to have_content('act')
+  end
 end
