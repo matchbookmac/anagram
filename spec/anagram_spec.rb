@@ -6,9 +6,9 @@ describe('String#anagram') do
     expect("dog".anagram("god")).to(eq(true))
   end
   it("will tell the user if there are any anagrams for the word") do
-    expect("dog".anagram(["god", "got", "a", "8"])).to(eq(true))
+    expect("dog".anagram("god, got, a, 8")).to(eq(true))
   end
   it("will tell the user if there are any anagrams for the word in the array") do
-    expect("dog".anagram(["god", "ogd", "odg"])).to(eq(true))
+    expect("dog".anagram("god, ogd, odg")).to(eq(true))
   end
 end
