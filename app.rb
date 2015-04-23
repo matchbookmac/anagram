@@ -1,13 +1,14 @@
-require('Sinatra')
-require('Sinatra/reloader')
+require('sinatra')
+require('sinatra/reloader')
 require('./lib/anagram')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  erb (:index)
+  erb(:index)
 end
 
 get('/anagrams') do
+  @word = params.fetch('word')
   @anagrams = params.fetch('word').anagram('words')
   erb(:anagrams)
 end
