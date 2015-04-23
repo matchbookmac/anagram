@@ -1,3 +1,4 @@
+require('pry')
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/anagram')
@@ -9,6 +10,6 @@ end
 
 get('/anagrams') do
   @word = params.fetch('word')
-  @anagrams = params.fetch('word').anagram('words')
+  @anagrams = params.fetch('word').anagram(params.fetch('words'))
   erb(:anagrams)
 end

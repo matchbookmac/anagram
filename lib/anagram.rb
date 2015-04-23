@@ -13,5 +13,6 @@ class String
       end
     end
     anagrams = anagrams.join(", ")
+    anagrams
   end
 end

@@ -9,6 +9,6 @@ describe('The anagram path', {:type => :feature}) do
     fill_in('word', :with => 'god')
     fill_in('words', :with => 'got, hair, dog, 8, seven, odg')
     click_button('go!')
-    expect(page).to have_content('got, dog, odg')
+    expect(page).to have_content('dog, odg')
   end
 end
